@@ -77,46 +77,6 @@
             }
         }
     </script>
-    <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        /* Mỏng hơn cho mobile */
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #F97316;
-            border-radius: 4px;
-        }
-
-        /* Animations */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
-        }
-
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Gradient text */
-        .text-gradient {
-            background: linear-gradient(135deg, #F97316 0%, #ff983f 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-bg {
-            background-image: radial-gradient(circle at 10% 20%, rgba(249, 115, 22, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.05) 0%, transparent 20%);
-        }
-    </style>
 </head>
 
 <body class="bg-white text-gray-800 font-sans antialiased overflow-x-hidden w-full">
@@ -126,7 +86,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 md:h-20"> <!-- Thấp hơn xíu trên mobile -->
                 <div class="flex-shrink-0 flex items-center gap-2 md:gap-3 cursor-pointer">
-                    <img src="https://dauan.text-2.com/favicon.ico" alt="Dấu Ấn Logo"
+                    <img src="https://dauan.text-2.com/logoc.png" alt="Dấu Ấn Logo"
                         class="w-10 h-10 md:w-12 md:h-12 rounded-xl object-cover shadow-sm border border-orange-50">
                     <div class="flex flex-col justify-center">
                         <span
@@ -484,63 +444,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile Menu Toggle với UX mượt hơn
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const icon = btn.querySelector('i');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            if (menu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
-        });
-
-        // Đóng menu khi bấm link trên mobile
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-
-        // Sticky Navbar mượt hơn
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 10) {
-                nav.classList.add('shadow-md');
-            } else {
-                nav.classList.remove('shadow-md');
-            }
-        });
-
-        // Intersection Observer for scroll animations (tối ưu cho mobile)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px 0px -50px 0px', // Kích hoạt sớm xíu để mobile không bị giật
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-up').forEach((elem) => {
-            observer.observe(elem);
-        });
-    </script>
 </body>
 
 </html>
