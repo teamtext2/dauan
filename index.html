@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Dấu Ấn Production | Ghi dấu ấn - Tạo điểm nhấn</title>
 
     <!-- SEO Cơ Bản -->
@@ -16,37 +16,18 @@
     <meta name="author" content="Text2 - Hóa Nhật Anh">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://dauan.text-2.com/">
-    <!-- Google tag (gtag.js) - GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABCDEFG123"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', 'G-6J85STMJ14');
-    </script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <!-- Favicon -->
     <link rel="icon" href="https://dauan.text-2.com/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="https://dauan.text-2.com/favicon.ico" type="image/x-icon">
 
-    <!-- Open Graph / Social Media (Facebook, Zalo) -->
+    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dauan.text-2.com/">
     <meta property="og:title" content="Dấu Ấn Production | Ghi dấu ấn - Tạo điểm nhấn">
     <meta property="og:description"
         content="Visual Storytelling - Kể chuyện bằng hình ảnh đẳng cấp điện ảnh cùng Dấu Ấn Production.">
     <meta property="og:image" content="https://dauan.text-2.com/apple-touch-icon.png">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://dauan.text-2.com/">
-    <meta name="twitter:title" content="Dấu Ấn Production | Ghi dấu ấn - Tạo điểm nhấn">
-    <meta name="twitter:description" content="Production House hàng đầu, khép kín từ kịch bản đến hậu kỳ.">
-    <meta name="twitter:image" content="https://dauan.text-2.com/apple-touch-icon.png">
 
     <!-- Schema Markup (JSON-LD) cho Doanh Nghiệp -->
     <script type="application/ld+json">
@@ -87,7 +68,7 @@
                     },
                     colors: {
                         brand: {
-                            orange: '#F97316', // Cam nhiệt huyết
+                            orange: '#F97316',
                             dark: '#111827',
                             light: '#F3F4F6'
                         }
@@ -99,9 +80,10 @@
     <style>
         /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
 
+        /* Mỏng hơn cho mobile */
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
@@ -111,15 +93,11 @@
             border-radius: 4px;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ea580c;
-        }
-
         /* Animations */
         .fade-up {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
         }
 
         .fade-up.visible {
@@ -141,18 +119,23 @@
     </style>
 </head>
 
-<body class="bg-white text-gray-800 font-sans antialiased overflow-x-hidden">
+<body class="bg-white text-gray-800 font-sans antialiased overflow-x-hidden w-full">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-                    <!-- Logo from src -->
-                    <img src="https://dauan.text-2.com" alt="Dấu Ấn Logo" class="h-10 w-auto object-contain"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span class="font-bold text-2xl text-gray-900 hidden">DẤU ẤN<span
-                            class="text-brand-orange">.</span></span>
+            <div class="flex justify-between items-center h-16 md:h-20"> <!-- Thấp hơn xíu trên mobile -->
+                <div class="flex-shrink-0 flex items-center gap-2 md:gap-3 cursor-pointer">
+                    <img src="https://dauan.text-2.com/favicon.ico" alt="Dấu Ấn Logo"
+                        class="w-10 h-10 md:w-12 md:h-12 rounded-xl object-cover shadow-sm border border-orange-50">
+                    <div class="flex flex-col justify-center">
+                        <span
+                            class="font-black text-sm sm:text-base md:text-xl text-gray-900 leading-none tracking-tight whitespace-nowrap">DẤU
+                            ẤN <span class="text-brand-orange">PRODUCTION</span></span>
+                        <span
+                            class="text-[10px] md:text-xs text-gray-400 font-medium tracking-widest hidden sm:block mt-1">CINEMATIC
+                            VISUALS</span>
+                    </div>
                 </div>
 
                 <!-- Desktop Menu -->
@@ -176,55 +159,64 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-orange focus:outline-none">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-900 p-2 focus:outline-none rounded-lg hover:bg-gray-100 transition-colors">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
+
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 absolute w-full shadow-2xl transition-all origin-top">
+            <div class="px-4 pt-4 pb-6 space-y-2">
                 <a href="#about"
-                    class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-brand-orange hover:bg-orange-50">Về
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-800 hover:text-brand-orange hover:bg-orange-50 transition-colors">Về
                     Chúng Tôi</a>
                 <a href="#services"
-                    class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-brand-orange hover:bg-orange-50">Dịch
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-800 hover:text-brand-orange hover:bg-orange-50 transition-colors">Dịch
                     Vụ</a>
                 <a href="#culture"
-                    class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-brand-orange hover:bg-orange-50">Văn
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-800 hover:text-brand-orange hover:bg-orange-50 transition-colors">Văn
                     Hóa</a>
                 <a href="#roadmap"
-                    class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-brand-orange hover:bg-orange-50">Tầm
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-800 hover:text-brand-orange hover:bg-orange-50 transition-colors">Tầm
                     Nhìn</a>
+                <a href="#contact"
+                    class="block px-4 py-3 mt-4 text-center rounded-xl bg-brand-orange text-white text-base font-bold shadow-lg shadow-orange-500/30">Liên
+                    Hệ Ngay</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
+    <section class="relative pt-28 pb-16 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-brand-orange font-semibold text-sm mb-6 fade-up">
-                <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                class="inline-flex items-center gap-2 px-4 py-1.5 md:py-2 rounded-full bg-orange-50 text-brand-orange font-semibold text-xs md:text-sm mb-4 md:mb-6 fade-up">
+                <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-orange animate-pulse"></span>
                 Top-of-mind Production House
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight mb-6 fade-up"
+            <!-- Cỡ chữ thu gọn trên mobile -->
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight mb-4 md:mb-6 leading-tight fade-up"
                 style="transition-delay: 100ms;">
                 Ghi Dấu Ấn <br />
                 <span class="text-gradient">Tạo Điểm Nhấn.</span>
             </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 fade-up" style="transition-delay: 200ms;">
+            <p class="mt-3 md:mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-500 px-2 fade-up"
+                style="transition-delay: 200ms;">
                 Visual Storytelling - Kể chuyện bằng hình ảnh đẳng cấp điện ảnh. Chúng tôi biến ý tưởng sơ khai thành
                 tác phẩm thị giác mãn nhãn.
             </p>
-            <div class="mt-10 flex justify-center gap-4 fade-up" style="transition-delay: 300ms;">
+            <div class="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4 sm:px-0 fade-up"
+                style="transition-delay: 300ms;">
                 <a href="#services"
-                    class="px-8 py-4 border border-transparent text-base font-bold rounded-full text-white bg-brand-orange hover:bg-orange-600 md:text-lg transition-all shadow-xl shadow-orange-500/20">
+                    class="w-full sm:w-auto px-8 py-3.5 md:py-4 border border-transparent text-sm md:text-base font-bold rounded-full text-white bg-brand-orange hover:bg-orange-600 transition-all shadow-xl shadow-orange-500/20 text-center">
                     Khám Phá Dự Án
                 </a>
                 <a href="#about"
-                    class="px-8 py-4 border-2 border-gray-200 text-base font-bold rounded-full text-gray-700 bg-white hover:border-brand-orange hover:text-brand-orange md:text-lg transition-all">
+                    class="w-full sm:w-auto px-8 py-3.5 md:py-4 border-2 border-gray-200 text-sm md:text-base font-bold rounded-full text-gray-700 bg-white hover:border-brand-orange hover:text-brand-orange transition-all text-center">
                     Về Dấu Ấn
                 </a>
             </div>
@@ -232,35 +224,38 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
+    <!-- Giảm padding mobile từ py-20 xuống py-12 -->
+    <section id="about" class="py-12 md:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="fade-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Đối tác sản xuất đủ <span
-                            class="text-brand-orange">"tầm"</span> và <span class="text-brand-orange">"tâm"</span></h2>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div class="fade-up order-2 lg:order-1">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-snug">Đối
+                        tác sản xuất đủ <span class="text-brand-orange">"tầm"</span> và <span
+                            class="text-brand-orange">"tâm"</span></h2>
+                    <p class="text-gray-600 text-base md:text-lg mb-6 leading-relaxed">
                         Thấu hiểu khó khăn của khách hàng khi phải trăn trở tìm kiếm một đối tác sản xuất chất lượng.
                         <strong>Dấu Ấn Production</strong> ra đời với hệ thống 25 nhân sự In-house khép kín từ kịch bản
                         đến hậu kỳ, giúp kiểm soát 100% chất lượng.
                     </p>
-                    <div class="grid grid-cols-2 gap-6 mt-8">
-                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                            <div class="text-brand-orange text-3xl mb-2"><i class="fas fa-users"></i></div>
-                            <h4 class="font-bold text-gray-900 text-xl">25+</h4>
-                            <p class="text-sm text-gray-500">Nhân sự In-house</p>
+                    <div class="grid grid-cols-2 gap-4 md:gap-6 mt-6 md:mt-8">
+                        <div
+                            class="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-100 text-center md:text-left">
+                            <div class="text-brand-orange text-2xl md:text-3xl mb-2"><i class="fas fa-users"></i></div>
+                            <h4 class="font-bold text-gray-900 text-lg md:text-xl">25+</h4>
+                            <p class="text-xs md:text-sm text-gray-500">Nhân sự In-house</p>
                         </div>
-                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                            <div class="text-brand-orange text-3xl mb-2"><i class="fas fa-film"></i></div>
-                            <h4 class="font-bold text-gray-900 text-xl">100%</h4>
-                            <p class="text-sm text-gray-500">Khép kín quy trình</p>
+                        <div
+                            class="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-100 text-center md:text-left">
+                            <div class="text-brand-orange text-2xl md:text-3xl mb-2"><i class="fas fa-film"></i></div>
+                            <h4 class="font-bold text-gray-900 text-lg md:text-xl">100%</h4>
+                            <p class="text-xs md:text-sm text-gray-500">Khép kín quy trình</p>
                         </div>
                     </div>
                 </div>
-                <div class="relative fade-up" style="transition-delay: 200ms;">
-                    <!-- Abstract representation of the company structure -->
-                    <div class="bg-white p-8 rounded-3xl shadow-xl relative z-10 border border-gray-100">
-                        <h3 class="text-xl font-bold mb-4 border-b pb-2">Thông Tin Pháp Lý</h3>
-                        <ul class="space-y-4 text-gray-600">
+                <div class="relative fade-up order-1 lg:order-2" style="transition-delay: 200ms;">
+                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-xl relative z-10 border border-gray-100">
+                        <h3 class="text-lg md:text-xl font-bold mb-4 border-b pb-2">Thông Tin Pháp Lý</h3>
+                        <ul class="space-y-3 md:space-y-4 text-sm md:text-base text-gray-600">
                             <li class="flex items-start gap-3"><i
                                     class="fas fa-check-circle text-brand-orange mt-1"></i> <span><strong>Founder &
                                         CEO:</strong> Ông Hóa Nhật Anh</span></li>
@@ -268,15 +263,15 @@
                                     class="fas fa-check-circle text-brand-orange mt-1"></i> <span><strong>Vốn điều
                                         lệ:</strong> 10.000.000.000 VNĐ</span></li>
                             <li class="flex items-start gap-3"><i
-                                    class="fas fa-check-circle text-brand-orange mt-1"></i> <span><strong>Ngày thành
+                                    class="fas fa-check-circle text-brand-orange mt-1"></i> <span><strong>Thành
                                         lập:</strong> 15/03/2025</span></li>
                             <li class="flex items-start gap-3"><i
                                     class="fas fa-check-circle text-brand-orange mt-1"></i> <span><strong>Trụ
-                                        sở:</strong> River Gate, 151-155 Bến Vân Đồn, Q4, TP.HCM</span></li>
+                                        sở:</strong> River Gate, Quận 4, TP.HCM</span></li>
                         </ul>
                     </div>
                     <div
-                        class="absolute inset-0 bg-brand-orange rounded-3xl transform translate-x-4 translate-y-4 -z-10 opacity-20">
+                        class="absolute inset-0 bg-brand-orange rounded-3xl transform translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 -z-10 opacity-20">
                     </div>
                 </div>
             </div>
@@ -284,163 +279,154 @@
     </section>
 
     <!-- Services / Core Products -->
-    <section id="services" class="py-20 bg-white">
+    <section id="services" class="py-12 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Sản Phẩm Cốt Lõi</h2>
-                <p class="text-gray-500 text-lg">Hệ sinh thái dịch vụ hình ảnh đẳng cấp, mang lại hiệu quả truyền thông
-                    thực tế cho doanh nghiệp.</p>
+            <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16 fade-up">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">Sản Phẩm Cốt Lõi</h2>
+                <p class="text-gray-500 text-sm md:text-lg">Hệ sinh thái dịch vụ hình ảnh đẳng cấp, mang lại hiệu quả
+                    truyền thông thực tế.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- TVC -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <div
-                    class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 fade-up">
+                    class="bg-gray-50 rounded-3xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 fade-up text-center md:text-left">
                     <div
-                        class="w-14 h-14 bg-orange-100 text-brand-orange rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        class="w-12 h-12 md:w-14 md:h-14 bg-orange-100 text-brand-orange rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-4 md:mb-6 mx-auto md:mx-0">
                         <i class="fas fa-video"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">TVC Quảng Cáo</h3>
-                    <p class="text-gray-600 mb-4">Doanh thu cốt lõi. Cung cấp giải pháp hình ảnh sắc nét, ý tưởng đột
-                        phá cho các Agency và Nhãn hàng lớn.</p>
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">TVC Quảng Cáo</h3>
+                    <p class="text-sm md:text-base text-gray-600 mb-2">Cung cấp giải pháp hình ảnh sắc nét, ý tưởng đột
+                        phá cho các Agency lớn.</p>
                 </div>
 
-                <!-- Corporate -->
-                <div class="bg-brand-orange rounded-3xl p-8 shadow-lg shadow-orange-500/20 hover:-translate-y-2 transition-all duration-300 fade-up"
+                <div class="bg-brand-orange rounded-3xl p-6 md:p-8 shadow-lg shadow-orange-500/20 hover:-translate-y-2 transition-all duration-300 fade-up text-center md:text-left"
                     style="transition-delay: 150ms;">
                     <div
-                        class="w-14 h-14 bg-white/20 text-white rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        class="w-12 h-12 md:w-14 md:h-14 bg-white/20 text-white rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-4 md:mb-6 mx-auto md:mx-0">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Phim Doanh Nghiệp</h3>
-                    <p class="text-white/90 mb-4">Profile Video, Phim tài liệu cao cấp. Giải pháp hình ảnh chuẩn mực
-                        giúp nâng tầm vị thế thương hiệu.</p>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">Phim Doanh Nghiệp</h3>
+                    <p class="text-sm md:text-base text-white/90 mb-2">Profile Video, Phim tài liệu. Giải pháp hình ảnh
+                        chuẩn mực nâng tầm vị thế.</p>
                 </div>
 
-                <!-- MV -->
-                <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 fade-up"
+                <div class="bg-gray-50 rounded-3xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 fade-up text-center md:text-left"
                     style="transition-delay: 300ms;">
                     <div
-                        class="w-14 h-14 bg-orange-100 text-brand-orange rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        class="w-12 h-12 md:w-14 md:h-14 bg-orange-100 text-brand-orange rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-4 md:mb-6 mx-auto md:mx-0">
                         <i class="fas fa-music"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">MV Điện Ảnh</h3>
-                    <p class="text-gray-600 mb-4">Tác phẩm thị giác mãn nhãn, tạo viral trên Top Trending. Đây chính là
-                        Showreel rực rỡ nhất của chúng tôi.</p>
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">MV Điện Ảnh</h3>
+                    <p class="text-sm md:text-base text-gray-600 mb-2">Tác phẩm thị giác mãn nhãn. Showreel rực rỡ nhất
+                        của chúng tôi.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Culture & 5 Rules -->
-    <section id="culture" class="py-20 bg-gray-900 text-white relative overflow-hidden">
-        <!-- Background accents -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange opacity-10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-orange opacity-10 rounded-full blur-3xl"></div>
+    <section id="culture" class="py-12 md:py-20 bg-gray-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-brand-orange opacity-10 rounded-full blur-3xl">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-brand-orange opacity-10 rounded-full blur-3xl">
+        </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">5 Quy Tắc Vàng</h2>
-                <p class="text-gray-400 text-lg">Văn hóa làm việc tạo nên chất lượng điện ảnh tại Dấu Ấn Production</p>
+            <div class="text-center mb-10 md:mb-16 fade-up">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">5 Quy Tắc Vàng</h2>
+                <p class="text-gray-400 text-sm md:text-lg">Văn hóa làm việc tạo nên chất lượng điện ảnh.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                <!-- Rule 1 -->
-                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700 fade-up"
-                    style="transition-delay: 100ms;">
-                    <div class="text-brand-orange text-4xl font-black mb-4 opacity-50">01</div>
-                    <h4 class="font-bold text-lg mb-2">Deadline Là Tối Thượng</h4>
-                    <p class="text-sm text-gray-400">Hoàn thành trước hạn ít nhất 4 tiếng để dự phòng rủi ro kỹ thuật.
-                    </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+                <!-- Box styling cho mobile gọn hơn -->
+                <div class="bg-gray-800/50 backdrop-blur-sm p-5 md:p-6 rounded-2xl border border-gray-700 fade-up">
+                    <div class="text-brand-orange text-3xl md:text-4xl font-black mb-2 md:mb-4 opacity-50">01</div>
+                    <h4 class="font-bold text-base md:text-lg mb-1 md:mb-2">Deadline Là Tối Thượng</h4>
+                    <p class="text-xs md:text-sm text-gray-400">Hoàn thành trước hạn ít nhất 4 tiếng để dự phòng.</p>
                 </div>
-                <!-- Rule 2 -->
-                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700 fade-up"
-                    style="transition-delay: 200ms;">
-                    <div class="text-brand-orange text-4xl font-black mb-4 opacity-50">02</div>
-                    <h4 class="font-bold text-lg mb-2">Bảo Mật Tuyệt Đối</h4>
-                    <p class="text-sm text-gray-400">Không leak hình ảnh, dự án lên mạng khi chưa được phép.</p>
+                <div class="bg-gray-800/50 backdrop-blur-sm p-5 md:p-6 rounded-2xl border border-gray-700 fade-up">
+                    <div class="text-brand-orange text-3xl md:text-4xl font-black mb-2 md:mb-4 opacity-50">02</div>
+                    <h4 class="font-bold text-base md:text-lg mb-1 md:mb-2">Bảo Mật Tuyệt Đối</h4>
+                    <p class="text-xs md:text-sm text-gray-400">Không leak hình ảnh lên mạng khi chưa phép.</p>
                 </div>
-                <!-- Rule 3 -->
-                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700 fade-up"
-                    style="transition-delay: 300ms;">
-                    <div class="text-brand-orange text-4xl font-black mb-4 opacity-50">03</div>
-                    <h4 class="font-bold text-lg mb-2">Hiện Trường Không Rác</h4>
-                    <p class="text-sm text-gray-400">Dọn dẹp sạch sẽ, lịch sự, không ảnh hưởng xung quanh.</p>
+                <div class="bg-gray-800/50 backdrop-blur-sm p-5 md:p-6 rounded-2xl border border-gray-700 fade-up">
+                    <div class="text-brand-orange text-3xl md:text-4xl font-black mb-2 md:mb-4 opacity-50">03</div>
+                    <h4 class="font-bold text-base md:text-lg mb-1 md:mb-2">Hiện Trường Không Rác</h4>
+                    <p class="text-xs md:text-sm text-gray-400">Dọn dẹp sạch sẽ, không ảnh hưởng xung quanh.</p>
                 </div>
-                <!-- Rule 4 -->
-                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700 fade-up"
-                    style="transition-delay: 400ms;">
-                    <div class="text-brand-orange text-4xl font-black mb-4 opacity-50">04</div>
-                    <h4 class="font-bold text-lg mb-2">Quản Lý Tập Trung</h4>
-                    <p class="text-sm text-gray-400">Backup dữ liệu vào 2 hệ thống độc lập (NAS & Cloud) ngay lập tức.
-                    </p>
+                <div class="bg-gray-800/50 backdrop-blur-sm p-5 md:p-6 rounded-2xl border border-gray-700 fade-up">
+                    <div class="text-brand-orange text-3xl md:text-4xl font-black mb-2 md:mb-4 opacity-50">04</div>
+                    <h4 class="font-bold text-base md:text-lg mb-1 md:mb-2">Quản Lý Tập Trung</h4>
+                    <p class="text-xs md:text-sm text-gray-400">Backup dữ liệu vào NAS & Cloud ngay lập tức.</p>
                 </div>
-                <!-- Rule 5 -->
-                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700 fade-up"
-                    style="transition-delay: 500ms;">
-                    <div class="text-brand-orange text-4xl font-black mb-4 opacity-50">05</div>
-                    <h4 class="font-bold text-lg mb-2">Phản Hồi Xây Dựng</h4>
-                    <p class="text-sm text-gray-400">Góp ý dựa trên mục tiêu nhãn hàng, không chỉ trích cá nhân.</p>
+                <div
+                    class="bg-gray-800/50 backdrop-blur-sm p-5 md:p-6 rounded-2xl border border-gray-700 fade-up sm:col-span-2 lg:col-span-1">
+                    <div class="text-brand-orange text-3xl md:text-4xl font-black mb-2 md:mb-4 opacity-50">05</div>
+                    <h4 class="font-bold text-base md:text-lg mb-1 md:mb-2">Phản Hồi Xây Dựng</h4>
+                    <p class="text-xs md:text-sm text-gray-400">Góp ý dựa trên mục tiêu, không chỉ trích cá nhân.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Roadmap / Vision -->
-    <section id="roadmap" class="py-20 bg-white">
+    <section id="roadmap" class="py-12 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lộ Trình Phát Triển</h2>
-                <p class="text-gray-500">Chiến lược xây dựng hệ sinh thái Dấu Ấn Ecosystem</p>
+            <div class="text-center mb-10 md:mb-16 fade-up">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">Lộ Trình Phát Triển
+                </h2>
+                <p class="text-gray-500 text-sm md:text-base">Chiến lược xây dựng hệ sinh thái Dấu Ấn Ecosystem</p>
             </div>
 
             <div class="relative max-w-4xl mx-auto">
-                <!-- Line -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-100 hidden md:block">
+                <div
+                    class="absolute left-6 md:left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-100 hidden sm:block">
                 </div>
 
                 <!-- Phase 1 -->
                 <div
-                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-12 fade-up">
+                    class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-8 md:mb-12 fade-up pl-10 sm:pl-0">
                     <div
-                        class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border-4 border-white bg-brand-orange text-white font-bold z-10 absolute left-1/2 transform -translate-x-1/2 shadow-md">
+                        class="hidden sm:flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border-4 border-white bg-brand-orange text-white text-sm md:text-base font-bold z-10 absolute left-6 md:left-1/2 transform -translate-x-1/2 shadow-md">
                         1</div>
                     <div
-                        class="w-full md:w-[45%] bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-brand-orange transition-colors">
-                        <span class="text-brand-orange font-bold text-sm mb-2 block">NĂM 1 - 2</span>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">Sinh tồn & Kiến tạo Showreel</h4>
-                        <p class="text-gray-600 text-sm">Đánh mạnh mảng Phim doanh nghiệp (SMEs) để duy trì dòng tiền.
-                            Tài trợ sản xuất MV Indie để phô diễn kỹ thuật điện ảnh.</p>
+                        class="w-full sm:w-[80%] md:w-[45%] bg-gray-50 p-5 md:p-6 rounded-2xl border border-gray-100 hover:border-brand-orange transition-colors">
+                        <span class="text-brand-orange font-bold text-xs md:text-sm mb-1 md:mb-2 block">NĂM 1 - 2</span>
+                        <h4 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Sinh tồn & Kiến tạo Showreel</h4>
+                        <p class="text-gray-600 text-xs md:text-sm">Đánh mạnh Phim doanh nghiệp (SMEs) duy trì dòng
+                            tiền. Sản xuất MV Indie để phô diễn kỹ thuật.</p>
                     </div>
                 </div>
 
                 <!-- Phase 2 -->
                 <div
-                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-12 fade-up">
+                    class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-8 md:mb-12 fade-up pl-10 sm:pl-0">
                     <div
-                        class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border-4 border-white bg-brand-orange text-white font-bold z-10 absolute left-1/2 transform -translate-x-1/2 shadow-md">
+                        class="hidden sm:flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border-4 border-white bg-brand-orange text-white text-sm md:text-base font-bold z-10 absolute left-6 md:left-1/2 transform -translate-x-1/2 shadow-md">
                         2</div>
                     <div
-                        class="w-full md:w-[45%] bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-brand-orange transition-colors">
-                        <span class="text-brand-orange font-bold text-sm mb-2 block">NĂM 3 - 4</span>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">Tối ưu Lợi nhuận</h4>
-                        <p class="text-gray-600 text-sm">Dịch chuyển 80% nguồn lực đánh chiếm mảng High-end TVC. Trở
-                            thành "Vendor ruột" cho các Agency truyền thông hàng đầu.</p>
+                        class="w-full sm:w-[80%] md:w-[45%] bg-gray-50 p-5 md:p-6 rounded-2xl border border-gray-100 hover:border-brand-orange transition-colors">
+                        <span class="text-brand-orange font-bold text-xs md:text-sm mb-1 md:mb-2 block">NĂM 3 - 4</span>
+                        <h4 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Tối ưu Lợi nhuận</h4>
+                        <p class="text-gray-600 text-xs md:text-sm">Dịch chuyển 80% nguồn lực vào High-end TVC. Trở
+                            thành "Vendor ruột" cho các Agency truyền thông.</p>
                     </div>
                 </div>
 
                 <!-- Phase 3 -->
                 <div
-                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up">
+                    class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up pl-10 sm:pl-0">
                     <div
-                        class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border-4 border-white bg-brand-orange text-white font-bold z-10 absolute left-1/2 transform -translate-x-1/2 shadow-md">
+                        class="hidden sm:flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border-4 border-white bg-brand-orange text-white text-sm md:text-base font-bold z-10 absolute left-6 md:left-1/2 transform -translate-x-1/2 shadow-md">
                         3</div>
                     <div
-                        class="w-full md:w-[45%] bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-brand-orange transition-colors">
-                        <span class="text-brand-orange font-bold text-sm mb-2 block">NĂM 5 TRỞ ĐI</span>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">Hệ sinh thái khép kín</h4>
-                        <p class="text-gray-600 text-sm">Phát triển Dấu Ấn Post-House (Hậu kỳ độc lập) và Dấu Ấn Studio
-                            (Phim trường riêng cho thuê), tạo dòng tiền thụ động.</p>
+                        class="w-full sm:w-[80%] md:w-[45%] bg-gray-50 p-5 md:p-6 rounded-2xl border border-gray-100 hover:border-brand-orange transition-colors">
+                        <span class="text-brand-orange font-bold text-xs md:text-sm mb-1 md:mb-2 block">NĂM 5 TRỞ
+                            ĐI</span>
+                        <h4 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Hệ sinh thái khép kín</h4>
+                        <p class="text-gray-600 text-xs md:text-sm">Phát triển Dấu Ấn Post-House (Hậu kỳ) và Dấu Ấn
+                            Studio (Phim trường), tạo dòng tiền thụ động.</p>
                     </div>
                 </div>
             </div>
@@ -448,32 +434,33 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
+    <footer id="contact" class="bg-gray-900 text-white pt-12 md:pt-16 pb-6 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 lg:col-span-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10">
+                <div class="col-span-1 lg:col-span-2 text-center md:text-left">
                     <img src="https://dauan.text-2.com" alt="Dấu Ấn Logo"
-                        class="h-12 w-auto mb-6 bg-white/10 p-2 rounded-lg" onerror="this.style.display='none';">
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-md">
+                        class="h-10 md:h-12 w-auto mb-4 md:mb-6 bg-white/10 p-2 rounded-lg mx-auto md:mx-0"
+                        onerror="this.style.display='none';">
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-md mx-auto md:mx-0">
                         <strong>Dấu Ấn Production</strong> - Top-of-mind Production House tại Việt Nam. Chuyên cung cấp
-                        giải pháp hình ảnh thương mại chuẩn điện ảnh, từ kịch bản đến hậu kỳ với quy trình In-house khép
-                        kín.
+                        giải pháp hình ảnh thương mại chuẩn điện ảnh, từ kịch bản đến hậu kỳ với quy trình In-house.
                     </p>
                 </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 text-white">Liên Hệ</h4>
-                    <ul class="space-y-4 text-sm text-gray-400">
-                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-brand-orange mt-1"></i>
-                            Tầng 5, River Gate, 151-155 Bến Vân Đồn, P6, Q4, TP.HCM</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-brand-orange"></i>
-                            hello@text-2.com</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-phone text-brand-orange"></i> Hotline
-                            0372996420</li>
+                <div class="text-center md:text-left">
+                    <h4 class="text-base md:text-lg font-bold mb-4 md:mb-6 text-white">Liên Hệ</h4>
+                    <ul class="space-y-3 md:space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start justify-center md:justiFfy-start gap-3"><i
+                                class="fas fa-map-marker-alt text-brand-orange mt-1"></i> River Gate, 151-155 Bến Vân
+                            Đồn, P6, Q4, TP.HCM</li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-envelope text-brand-orange"></i>hello@text-2.com</li>
+                        <li class="flex items-center justify-center md:justify-start gap-3"><i
+                                class="fas fa-phone text-brand-orange"></i>0372996420</li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 text-white">Kết Nối</h4>
-                    <div class="flex space-x-4">
+                <div class="text-center md:text-left">
+                    <h4 class="text-base md:text-lg font-bold mb-4 md:mb-6 text-white">Kết Nối</h4>
+                    <div class="flex justify-center md:justify-start space-x-4">
                         <a href="#"
                             class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-orange hover:text-white transition-colors"><i
                                 class="fab fa-facebook-f"></i></a>
@@ -486,9 +473,11 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm">© 2026 Dấu Ấn Production. Designed with ❤️ by Text2 CEO.</p>
-                <div class="flex space-x-4 mt-4 md:mt-0 text-sm text-gray-500">
+            <div
+                class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-center">
+                <p class="text-gray-500 text-xs md:text-sm mb-3 md:mb-0">© 2026 Dấu Ấn Production. Designed with ❤️ by
+                    Hóa Nhật Anh.</p>
+                <div class="flex space-x-4 text-xs md:text-sm text-gray-500">
                     <a href="#" class="hover:text-brand-orange">Bảo mật</a>
                     <a href="#" class="hover:text-brand-orange">Điều khoản</a>
                 </div>
@@ -497,45 +486,53 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle với UX mượt hơn
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu on click
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-
-        // Sticky Navbar
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 20) {
-                nav.classList.add('shadow-md');
-                nav.classList.replace('bg-white/90', 'bg-white/95');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             } else {
-                nav.classList.remove('shadow-md');
-                nav.classList.replace('bg-white/95', 'bg-white/90');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             }
         });
 
-        // Intersection Observer for scroll animations
+        // Đóng menu khi bấm link trên mobile
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Sticky Navbar mượt hơn
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Intersection Observer for scroll animations (tối ưu cho mobile)
         const observerOptions = {
             root: null,
-            rootMargin: '0px',
-            threshold: 0.15
+            rootMargin: '0px 0px -50px 0px', // Kích hoạt sớm xíu để mobile không bị giật
+            threshold: 0.1
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Run once
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
